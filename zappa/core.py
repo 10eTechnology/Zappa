@@ -2196,7 +2196,7 @@ class Zappa(object):
                 restApiId=api_id,
                 stage=stage
             )
-        
+
     def get_all_zones(self):
         """Same behaviour of list_host_zones, but transparently handling pagination."""
         zones = {'HostedZones': []}
@@ -2665,7 +2665,7 @@ class Zappa(object):
                 "events": ["sns:Publish"]
             },
             lambda_arn=lambda_arn,
-            target_function="zappa.async.route_task",
+            target_function="zappa.asynchronous.route_task",
             boto_session=self.boto_session
         )
         return topic_arn
